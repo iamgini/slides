@@ -1,0 +1,11 @@
+{
+  "name": "slides",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev": "reveal-md ansible-use-cases/slides.md --watch --css ansible-use-cases/custom.css"
+  },
+  "devDependencies": {
+    "reveal-md": "^6.1.4"
+  }
+}

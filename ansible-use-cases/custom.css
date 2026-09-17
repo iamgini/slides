@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;900&display=swap');
+
+/* ── Base ─────────────────────────────────────────────────── */
+.reveal {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 28px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* ── Slide alignment + consistent top breathing room ─────── */
+.reveal .slides section {
+  text-align: left;
+  padding-top: 1.2em;
+}
+
+/* vcenter slides manage their own position — no top padding */
+.reveal .slides section.vcenter {
+  padding-top: 0;
+}
+
+/* ── Headings ─────────────────────────────────────────────── */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+  font-family: 'Red Hat Display', sans-serif;
+  color: #1a1a1a;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.reveal h1 { font-size: 250%; font-weight: 900; }
+.reveal h2 { font-size: 160%; font-weight: 700; }
+.reveal h3 { font-size: 110%; font-weight: 700; color: #EE0000; }
+.reveal h4 { font-size: 100%; font-weight: 500; }
+.reveal h5 { font-size:  90%; font-weight: 500; }
+
+/* ── Body text ────────────────────────────────────────────── */
+.reveal p,
+.reveal li,
+.reveal td,
+.reveal th {
+  font-weight: 400;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+/* ── Bold text → Red Hat red (matches PDF bold labels) ─────── */
+.reveal strong {
+  color: #EE0000;
+  font-weight: 700;
+}
+
+/* ── Section label: standalone *italic* line above a heading ─
+   Write it as:   *Red Hat Consulting Services*
+   Renders as a small red label, not italic               ──── */
+.reveal .slides section > p > em:only-child {
+  color: #EE0000;
+  font-style: normal;
+  font-size: 0.6em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  display: block;
+  margin-bottom: -0.5em;
+}
+
+/* ── Bullet points — red dot ──────────────────────────────── */
+.reveal ul {
+  list-style: none;
+  padding-left: 1.2em;
+}
+
+.reveal ul > li::before {
+  content: '•';
+  color: #EE0000;
+  font-weight: 900;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* ── Blockquote — left red border (for callouts/stats) ─────── */
+.reveal blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #EE0000;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.4em 1em;
+  color: #1a1a1a;
+  font-style: normal;
+  width: 95%;
+}
+
+/* ── Code ─────────────────────────────────────────────────── */
+.reveal code {
+  background: #f5f5f5;
+  color: #1a1a1a;
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+}
+
+.reveal pre {
+  background: #f5f5f5;
+  box-shadow: none;
+  border-left: 4px solid #EE0000;
+}
+
+/* ── Links ────────────────────────────────────────────────── */
+.reveal a {
+  color: #EE0000;
+}
+
+/* ── Controls / progress / slide number ───────────────────── */
+.reveal .controls       { color: #EE0000; }
+.reveal .progress       { color: #EE0000; }
+.reveal .slide-number   { color: #EE0000; background: transparent; }
+
+/* ── Per-slide vertical centering (opt-in with vcenter class) */
+.reveal .slides section.vcenter {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* ── Card grid layout ─────────────────────────────────────── */
+.reveal .card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8em;
+  margin-top: 0.6em;
+}
+
+.reveal .card-grid.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reveal .card {
+  border: 1px solid #e8e8e8;
+  border-left: 4px solid #EE0000;
+  border-radius: 3px;
+  padding: 0.8em 1em;
+  background: #fafafa;
+}
+
+.reveal .card h4 {
+  color: #1a1a1a;
+  margin: 0 0 0.4em 0;
+  font-size: 95%;
+  font-weight: 700;
+}
+
+.reveal .card p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #444;
+  line-height: 1.4;
+}
