@@ -170,3 +170,323 @@
   color: #444;
   line-height: 1.4;
 }
+
+/* ── Pillar grid (numbered items, 2-col) ──────────────────── */
+.reveal .pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4em 1.4em;
+  margin-top: 0.5em;
+}
+
+.reveal .pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6em;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reveal .pillar-num {
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #EE0000;
+  line-height: 1;
+  min-width: 1.6em;
+  opacity: 0.8;
+}
+
+.reveal .pillar-title {
+  font-weight: 700;
+  font-size: 0.88em;
+  color: #1a1a1a;
+  margin-bottom: 0.15em;
+}
+
+.reveal .pillar-desc {
+  font-size: 0.75em;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ── Split layout (big label left + content list right) ───── */
+.reveal .split-layout {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 2.5em;
+  margin-top: 0.3em;
+  align-items: start;
+}
+
+.reveal .split-headline {
+  font-size: 2em;
+  font-weight: 900;
+  color: #EE0000;
+  line-height: 1.1;
+}
+
+.reveal .split-sub {
+  font-size: 0.75em;
+  color: #999;
+  margin-top: 0.6em;
+  font-style: italic;
+}
+
+.reveal .rule-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.reveal .rule-item {
+  padding: 0.42em 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 0.82em;
+  color: #2a2a2a;
+  line-height: 1.45;
+}
+
+.reveal .rule-item:first-child {
+  border-top: 1px solid #efefef;
+}
+
+/* ── Stat row (large numbers, 3-col) ──────────────────────── */
+.reveal .stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1em;
+  background: #f7f7f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.reveal .stat-item {
+  text-align: center;
+  padding: 1.2em 0.8em;
+  border-right: 1px solid #e4e4e4;
+}
+
+.reveal .stat-item:last-child { border-right: none; }
+
+.reveal .stat-number {
+  display: block;
+  font-size: 2.4em;
+  font-weight: 900;
+  color: #EE0000;
+  line-height: 1;
+}
+
+.reveal .stat-label {
+  font-size: 0.72em;
+  color: #444;
+  margin-top: 0.5em;
+  line-height: 1.4;
+}
+
+/* ── Two-column list (clean flowing columns, no boxes) ─────── */
+.reveal .two-col-list {
+  columns: 2;
+  column-gap: 2.5em;
+  margin-top: 0.6em;
+}
+
+.reveal .two-col-list > div {
+  break-inside: avoid;
+  padding: 0.38em 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.84em;
+  line-height: 1.4;
+}
+
+/* ── Checklist (✓ / ✗ icon prefix) ───────────────────────── */
+.reveal .checklist {
+  list-style: none;
+  padding-left: 0;
+  columns: 2;
+  column-gap: 2.5em;
+  margin-top: 0.6em;
+}
+
+.reveal .checklist > li {
+  break-inside: avoid;
+  padding: 0.38em 0 0.38em 1.8em;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.84em;
+  line-height: 1.4;
+  position: relative;
+}
+
+.reveal .checklist > li::before {
+  content: '✓';
+  color: #22aa55;
+  font-weight: 900;
+  position: absolute;
+  left: 0.1em;
+  width: auto;
+  margin-left: 0;
+}
+
+.reveal .checklist > li.no::before {
+  content: '✗';
+  color: #EE0000;
+}
+
+/* ── Process steps (horizontal flow with arrows) ──────────── */
+.reveal .process-steps {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 0.8em;
+}
+
+.reveal .step {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 0.8em 0.8em 0.8em 1em;
+  position: relative;
+  margin-right: 1.4em;
+  border-left: 3px solid #EE0000;
+}
+
+.reveal .step::after {
+  content: '▶';
+  position: absolute;
+  right: -1.15em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 0.85em;
+  z-index: 1;
+}
+
+.reveal .step:last-child { margin-right: 0; }
+.reveal .step:last-child::after { display: none; }
+
+.reveal .step-num {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 900;
+  color: #EE0000;
+  line-height: 1;
+  margin-bottom: 0.2em;
+}
+
+.reveal .step-title {
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #1a1a1a;
+  margin-bottom: 0.2em;
+}
+
+.reveal .step-desc {
+  font-size: 0.72em;
+  color: #555;
+  line-height: 1.35;
+}
+
+/* ── Highlight band (full-width colored bar) ──────────────── */
+.reveal .highlight-band {
+  background: #EE0000;
+  color: #ffffff;
+  padding: 0.45em 1em;
+  margin: 0.6em -0.5em;
+  font-weight: 700;
+  font-size: 0.95em;
+  letter-spacing: 0.02em;
+}
+
+.reveal .highlight-band.dark {
+  background: #1a1a1a;
+}
+
+.reveal .highlight-band.light {
+  background: #f0f0f0;
+  color: #EE0000;
+}
+
+/* ── Full-bleed colored section slides ───────────────────── */
+/* Use with data-background-color for true full-bleed:        */
+/* <!-- .slide: class="vcenter bg-red" data-background-color="#EE0000" --> */
+.reveal .slides section.bg-red h1,
+.reveal .slides section.bg-red h2,
+.reveal .slides section.bg-red h3,
+.reveal .slides section.bg-red p,
+.reveal .slides section.bg-red li,
+.reveal .slides section.bg-red strong {
+  color: #ffffff !important;
+}
+
+.reveal .slides section.bg-red > p > em:only-child {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.reveal .slides section.bg-red ul > li::before {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.reveal .slides section.bg-dark h1 {
+  color: #EE0000 !important;
+}
+
+.reveal .slides section.bg-dark h2,
+.reveal .slides section.bg-dark p,
+.reveal .slides section.bg-dark li {
+  color: #e8e8e8 !important;
+}
+
+.reveal .slides section.bg-dark strong {
+  color: #EE0000 !important;
+}
+
+.reveal .slides section.bg-dark > p > em:only-child {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.reveal .slides section.bg-dark ul > li::before {
+  color: #EE0000 !important;
+}
+
+/* ── Two-column with icon+label headers ──────────────────── */
+.reveal .col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8em;
+  margin-top: 0.6em;
+}
+
+.reveal .col-header {
+  display: block;
+  font-weight: 700;
+  color: #EE0000;
+  font-size: 0.95em;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #EE0000;
+}
+
+/* ── Alternating-row table ────────────────────────────────── */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82em;
+  margin-top: 0.6em;
+}
+
+.reveal table thead th {
+  background-color: #1a1a1a;
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 0.5em 0.8em;
+}
+
+.reveal table tbody td {
+  padding: 0.42em 0.8em;
+  border-bottom: 1px solid #eee;
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.reveal table tbody tr:hover {
+  background-color: #fff5f5;
+}
