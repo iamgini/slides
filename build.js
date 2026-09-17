@@ -17,11 +17,12 @@ if (decks.length === 0) {
 fs.mkdirSync(DIST, { recursive: true });
 
 // Build each deck into dist/<deck-name>/
+// Run from inside the deck directory so relative CSS paths resolve correctly
 for (const deck of decks) {
   console.log(`Building: ${deck}`);
   execSync(
-    `npx reveal-md ${deck}/slides.md --static ${DIST}/${deck}`,
-    { stdio: 'inherit' }
+    `npx reveal-md slides.md --static ../${DIST}/${deck}`,
+    { stdio: 'inherit', cwd: path.resolve(deck) }
   );
 }
 
