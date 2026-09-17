@@ -118,6 +118,19 @@
 .reveal .progress       { color: #EE0000; }
 .reveal .slide-number   { color: #EE0000; background: transparent; }
 
+/* ── Global footer (last updated date) ───────────────────── */
+.global-footer {
+  position: fixed;
+  top: 0.6em;
+  right: 1em;
+  font-size: 12px;
+  color: #bbb;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 400;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 /* ── Per-slide vertical centering (opt-in with vcenter class) */
 .reveal .slides section.vcenter {
   top: 50% !important;

@@ -3,6 +3,9 @@ title: Ansible Automation – Use Case Gallery
 theme: white
 highlightTheme: github-dark
 css: custom.css
+scripts:
+  - plugin/search/search.js
+  - plugins.js
 revealOptions:
   transition: slide
   transitionSpeed: fast
@@ -62,20 +65,19 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ## Agenda
 
-| Area | Topics |
-|---|---|
-| Immutable Infra & Provisioning | IaC, templates, self-service |
-| AI Automation | AIOps, GPU infra, model inferencing |
-| Security & Compliance | Hardening, scanning, patching |
-| OpenShift | Day 2 ops, CD, compliance |
-| Database & Middleware | Install, patch, health, compliance |
-| Infrastructure | VMware, network, edge |
-| Cloud | AWS, Azure, GCP, multi-cloud |
-| Emerging | EDA, GitOps, FinOps, supply chain |
+- [Immutable Infrastructure & Provisioning](#/immutable-infra)
+- [AI Automation](#/ai-automation)
+- [Security & Compliance](#/security)
+- [OpenShift Container Platform](#/openshift)
+- [Database & Middleware](#/database)
+- [Infrastructure Management](#/infrastructure)
+- [Cloud Automation](#/cloud)
+- [Emerging Use Cases](#/emerging)
+- [GCC Migration & Cloud Management](#/gcc)
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="immutable-infra" -->
 # Immutable Infrastructure & Provisioning
 
 ---
@@ -112,7 +114,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="ai-automation" -->
 # AI Automation
 
 ---
@@ -214,7 +216,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="security" -->
 # Security & Compliance
 
 ---
@@ -266,7 +268,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="openshift" -->
 # OpenShift Container Platform
 
 ---
@@ -315,7 +317,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="database" -->
 # Database & Middleware
 
 ---
@@ -332,7 +334,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="infrastructure" -->
 # Infrastructure Management
 
 ---
@@ -432,7 +434,7 @@ Ansible covers the full stack — from bare metal to cloud, from OS patching to 
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="cloud" -->
 # Cloud Automation
 
 ---
@@ -511,24 +513,164 @@ Using `google.cloud` (`gcp_*`) collection.
 
 ---
 
-<!-- .slide: class="vcenter" -->
+<!-- .slide: class="vcenter" id="emerging" -->
 # Emerging Use Cases
 
 ---
 
 ## Emerging Use Cases
 
-| Use Case | What It Does |
-|---|---|
-| Event-Driven Remediation | EDA watches alerts and webhooks — launches fixes without human intervention |
-| Execution Environment Lifecycle | Build, test, publish, and update AAP EEs automatically |
-| Secrets Rotation | Rotate DB passwords and API keys on schedule — zero downtime |
-| ITSM-Triggered Automation | ServiceNow / Jira approvals auto-launch the correct remediation playbook |
-| GitOps Reconciliation | Enforces Git state — detects and remediates drift automatically |
-| Compliance-as-Code in CI/CD | Blocks non-compliant infra changes in pipelines before production |
-| Supply Chain Security | SBOM generation, provenance tracking, dependency scanning |
-| FinOps Automation | Cost anomalies trigger right-sizing or decommission workflows |
-| Lightspeed Dev Workflows | Generate collection-aware tasks from natural language in VS Code |
+<div class="card-grid three-col">
+  <div class="card">
+    <h4>Event-Driven Remediation</h4>
+    <p>EDA watches alerts and webhooks — triggers targeted fixes automatically.</p>
+  </div>
+  <div class="card">
+    <h4>EE Lifecycle Management</h4>
+    <p>Build, test, publish, and update AAP EEs on schedule.</p>
+  </div>
+  <div class="card">
+    <h4>Secrets Rotation</h4>
+    <p>Rotate DB passwords and API keys on schedule — zero downtime.</p>
+  </div>
+  <div class="card">
+    <h4>ITSM-Triggered Automation</h4>
+    <p>ServiceNow / Jira approvals auto-launch the right remediation job.</p>
+  </div>
+  <div class="card">
+    <h4>GitOps Reconciliation</h4>
+    <p>Enforces Git state — detects and remediates drift automatically.</p>
+  </div>
+  <div class="card">
+    <h4>Compliance-as-Code in CI/CD</h4>
+    <p>Blocks non-compliant infra changes in pipelines before production.</p>
+  </div>
+  <div class="card">
+    <h4>Supply Chain Security</h4>
+    <p>SBOM generation, and dependency scanning.</p>
+  </div>
+  <div class="card">
+    <h4>FinOps Automation</h4>
+    <p>Cost anomalies trigger right-sizing or decommission workflows.</p>
+  </div>
+  <div class="card">
+    <h4>Lightspeed Dev Workflows</h4>
+    <p>Generate collection-aware tasks from natural language in VS Code.</p>
+  </div>
+</div>
+
+---
+
+<!-- .slide: class="vcenter" id="gcc" -->
+# GCC Migration & Cloud Management
+
+---
+
+*GCC Migration*
+
+## VM Workload Migration to GCC
+
+<div class="card-grid">
+  <div class="card">
+    <h4>Pre-Migration Assessment</h4>
+    <p>Inventory hosts, map app dependencies, assess OS compatibility — produce a wave-ready migration report.</p>
+  </div>
+  <div class="card">
+    <h4>Wave Orchestration</h4>
+    <p>Schedule phased migrations with coordinated network, storage, and compute changes per wave.</p>
+  </div>
+  <div class="card">
+    <h4>Automated Cutover</h4>
+    <p>DNS updates, load balancer reconfiguration, and health validation — executed in sequence, no manual steps.</p>
+  </div>
+  <div class="card">
+    <h4>Post-Migration Validation</h4>
+    <p>Connectivity checks, service smoke tests, and compliance verification after every migration wave.</p>
+  </div>
+</div>
+
+---
+
+*GCC Migration*
+
+## Cloud-to-Cloud Migration (Public → GCC)
+
+<div class="card-grid">
+  <div class="card">
+    <h4>Cross-Cloud Inventory</h4>
+    <p>Discover and catalog VMs, data volumes, and IAM resources on the source cloud before migration begins.</p>
+  </div>
+  <div class="card">
+    <h4>Data Migration Orchestration</h4>
+    <p>Coordinate replication pipelines to GCC-approved storage with checksum and integrity verification.</p>
+  </div>
+  <div class="card">
+    <h4>Identity Remapping</h4>
+    <p>Translate source IAM roles and policies to GCC-compliant access controls on the target cloud.</p>
+  </div>
+  <div class="card">
+    <h4>Network Reconfiguration</h4>
+    <p>Update routing tables, security groups, and firewall rules to match GCC network topology and controls.</p>
+  </div>
+</div>
+
+---
+
+*GCC Operations*
+
+## Managing GCC Workloads with AAP
+
+<div class="card-grid three-col">
+  <div class="card">
+    <h4>Compliance Baseline Enforcement</h4>
+    <p>Apply GCC security baselines continuously — detect and auto-remediate drift.</p>
+  </div>
+  <div class="card">
+    <h4>Patch Management</h4>
+    <p>Orchestrate patching with pre/post validation and audit reports.</p>
+  </div>
+  <div class="card">
+    <h4>Certificate Rotation</h4>
+    <p>Renew and distribute TLS certificates across GCC services before expiry.</p>
+  </div>
+  <div class="card">
+    <h4>Day 2 Operations</h4>
+    <p>Scaling, backup, snapshot, and housekeeping — all via AAP job templates.</p>
+  </div>
+  <div class="card">
+    <h4>Cost Optimisation</h4>
+    <p>Flag idle/untagged resources, trigger right-sizing, enforce tagging policies.</p>
+  </div>
+  <div class="card">
+    <h4>Access Control Enforcement</h4>
+    <p>Periodic IAM review — remove stale accounts and enforce least-privilege.</p>
+  </div>
+</div>
+
+---
+
+*GCC Operations*
+
+## AAP + Terraform Enterprise Integration
+
+<div class="card-grid">
+  <div class="card">
+    <h4>Terraform Plan Approval Gate</h4>
+    <p>AAP receives TFE plan output, routes for human approval via ITSM or chat, then triggers apply.</p>
+  </div>
+  <div class="card">
+    <h4>Drift Detection &amp; Remediation</h4>
+    <p>Scheduled AAP jobs detect Terraform state drift and trigger corrective TFE runs automatically.</p>
+  </div>
+  <div class="card">
+    <h4>GitOps Pipeline</h4>
+    <p>Git commit → TFE plan → AAP approval → TFE apply → AAP post-provisioning config in one workflow.</p>
+  </div>
+  <div class="card">
+    <h4>Workspace Lifecycle Management</h4>
+    <p>Create, manage, and destroy TFE workspaces via API — standardised environments on demand.</p>
+  </div>
+</div>
 
 ---
 
