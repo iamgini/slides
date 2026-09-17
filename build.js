@@ -16,14 +16,43 @@ if (decks.length === 0) {
 
 fs.mkdirSync(DIST, { recursive: true });
 
+// reveal.js plugins that are served dynamically in dev mode but must exist
+// as real files for static builds — copy them in, build, then clean up.
+const REVEAL_PLUGINS = [
+  path.join('plugin', 'search', 'search.js'),
+];
+
+function stagePlugins(deck) {
+  for (const rel of REVEAL_PLUGINS) {
+    const src = path.resolve('node_modules', 'reveal.js', rel);
+    const dst = path.join(deck, rel);
+    if (fs.existsSync(src)) {
+      fs.mkdirSync(path.dirname(dst), { recursive: true });
+      fs.copyFileSync(src, dst);
+    }
+  }
+}
+
+function cleanPlugins(deck) {
+  const pluginDir = path.join(deck, 'plugin');
+  if (fs.existsSync(pluginDir)) {
+    fs.rmSync(pluginDir, { recursive: true, force: true });
+  }
+}
+
 // Build each deck into dist/<deck-name>/
 // Run from inside the deck directory so relative CSS paths resolve correctly
 for (const deck of decks) {
   console.log(`Building: ${deck}`);
-  execSync(
-    `npx reveal-md slides.md --static ../${DIST}/${deck}`,
-    { stdio: 'inherit', cwd: path.resolve(deck) }
-  );
+  stagePlugins(deck);
+  try {
+    execSync(
+      `npx reveal-md slides.md --static ../${DIST}/${deck}`,
+      { stdio: 'inherit', cwd: path.resolve(deck) }
+    );
+  } finally {
+    cleanPlugins(deck);
+  }
 }
 
 // Generate root index.html listing all decks
